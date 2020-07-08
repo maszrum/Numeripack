@@ -5,13 +5,13 @@ Numeripack is a library containing several mathematical algorithms.
 
 ## Table of contents
 
-- [CollectionPermutator](#collection-permutator)
-- [ExtremumIterator](#extremum-iterator)
-- [MinimalHamiltonianPathSeeker](#minimal-hamiltonian-path-seeker)
-- [PermutationTree](#permutation-tree)
-- [GenericPermutator](#generic-permutator)
-- [PositionalIncrementer](#positional-incrementer)
-- [EnumStateMachine](#enum-state-machine)
+- [CollectionPermutator](#collectionpermutator)
+- [ExtremumIterator](#extremumiterator)
+- [MinimalHamiltonianPathSeeker](#minimalhamiltonianpathseeker)
+- [PermutationTree](#permutationtree)
+- [GenericPermutator](#genericpermutator)
+- [PositionalIncrementer](#positionalincrementer)
+- [EnumStateMachine](#enumstatemachine)
   
 ## CollectionPermutator
 

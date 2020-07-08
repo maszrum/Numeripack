@@ -6,7 +6,7 @@ namespace Numeripack
 {
 	public delegate void StateMachineStateChanged<in T>(T from, T to);
 
-	public class EnumStateMachine<T> : IStateMachine<T> where T : struct, Enum
+	public class EnumStateMachine<T> where T : struct, Enum
 	{
 		public event StateMachineStateChanged<T> StateChanged;
 

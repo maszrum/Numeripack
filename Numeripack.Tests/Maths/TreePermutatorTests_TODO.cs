@@ -3,51 +3,59 @@ using NUnit.Framework;
 
 namespace Numeripack.Tests.Maths
 {
-    [TestFixture]
-    internal class TreePermutatorTests
-    {
-        private TreePermutator<string> _permutationTree;
+	[TestFixture]
+	internal class TreePermutatorTests
+	{
+		private TreePermutator<string> _permutationTree;
 
-        [SetUp]
-        public void SetUp()
-        {
-            _permutationTree = new TreePermutator<string>(
-                new[] { "first", "second", "third", "fourth" });
-        }
+		[SetUp]
+		public void SetUp()
+		{
+			_permutationTree = new TreePermutator<string>(
+				new[] { "A", "B", "C" });
+		}
 
-        [Test]
-        public void Test()
-        {
-            while (_permutationTree.MoveNext())
-            {
-                Console.WriteLine(string.Join(" -> ", _permutationTree.Current.Elements));
-                //var currentElements = permutationTree.Current.Elements;
-                //if (currentElements.Count == 1 && currentElements[0] == 2)
-                //    permutationTree.Current.SkipBranch();
-                //if (currentElements.Count == 2 && currentElements[0] == 1 && currentElements[1] == 2)
-                //    permutationTree.Current.SkipBranch();
-            }
+		[Test]
+		public void Test()
+		{
+			while (_permutationTree.MoveNext())
+			{
+				var currentElements = _permutationTree.Current.Elements;
 
-            Console.WriteLine("result:");
+				if (currentElements.Count == 1 && currentElements[0] == "A")
+				{
+					_permutationTree.Current.SkipBranch();
+				}
+				if (currentElements.Count == 2 && currentElements[0] == "C" && currentElements[1] == "A")
+				{
+					_permutationTree.Current.SkipBranch();
+				}
+				else
+				{
+					Console.WriteLine(string.Join(" -> ", _permutationTree.Current.Elements));
+				}
+			}
 
-            var result = _permutationTree.Finish();
-            foreach (var path in result)
-            {
-                Console.WriteLine(string.Join(" -> ", path));
-            }
-        }
+			Console.WriteLine("result:");
 
-        [Test]
-        public void Skip_All()
-        {
-            while (_permutationTree.MoveNext())
-            {
-                _permutationTree.Current.SkipBranch();
-            }
+			var result = _permutationTree.GetResult();
+			foreach (var path in result)
+			{
+				Console.WriteLine(string.Join(" -> ", path));
+			}
+		}
 
-            var result = _permutationTree.Finish();
+		[Test]
+		public void Skip_All()
+		{
+			while (_permutationTree.MoveNext())
+			{
+				_permutationTree.Current.SkipBranch();
+			}
 
-            Assert.Zero(result.Count);
-        }
-    }
+			var result = _permutationTree.GetResult();
+
+			Assert.Zero(result.Count);
+		}
+	}
 }

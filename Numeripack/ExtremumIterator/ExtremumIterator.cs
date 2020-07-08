@@ -2,7 +2,7 @@
 
 namespace Numeripack
 {
-	public class ExtremumIterator<T, TArgument> : IExtremumIterator<TArgument>
+	public class ExtremumIterator<T, TArgument>
 	{
 		private readonly ExtremumIteratorParams<T, TArgument> _parameters;
 		private readonly StepContext<T, TArgument> _context;

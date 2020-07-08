@@ -6,14 +6,14 @@ using System.Linq;
 
 namespace Numeripack
 {
-	public class ObjectPermutator<T> : IPermutator<T>
+	public class GenericPermutator<T> : IEnumerable<T[]>
 	{
 		private readonly List<T> _originalCollection;
 
 		private T[] _value;
 		private IEnumerator<T[]> _enumerator;
 
-		public ObjectPermutator(IEnumerable<T> collection)
+		public GenericPermutator(IEnumerable<T> collection)
 		{
 			if (collection == null)
 			{

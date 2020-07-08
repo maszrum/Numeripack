@@ -507,16 +507,7 @@ It allows you to build a state machine with specific transitions. Uses enum type
 
 Let's build state machine for some process:
 
-```mermaid
-graph LR
-A[Active] --> B[Standby]
-B --> A
-A --> C[Suspect]
-C --> D[Failed]
-D --> C
-B --> C
-C --> B
-```
+![Process State](/state-machine.png)
 
 Define enum type (values must be powers of 2):
 ```csharp

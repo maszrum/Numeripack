@@ -181,7 +181,7 @@ Additionally, you can use functions:
 
 ## MinimalHamiltonianPathSeeker
 
-Finds hamiltonian graph path that has minimum value. Hamiltonian graph is an undirected or directed graph that visits each verte exactly once.
+Finds hamiltonian graph path that has minimum value. Hamiltonian graph is an undirected or directed graph that visits each vertex exactly once.
 
 ### Usage
 

@@ -368,7 +368,6 @@ while (permutationTree.MoveNext())
 Output will be:
 
 ```
-A
 B
 B -> C
 B -> C -> A
@@ -382,7 +381,7 @@ C -> B -> A
 Print result to console:
 
 ```csharp
-var result = _permutationTree.GetResult();
+var result = permutationTree.GetResult();
 foreach (var path in result)
 {
 	Console.WriteLine(string.Join(" -> ", path));
